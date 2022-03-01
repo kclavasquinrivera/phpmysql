@@ -1,3 +1,13 @@
+<?php
+  $contacts =[
+    ["name" => "Pepe" , "phone_number" => "88128523"],
+    ["name" => "kevin" , "phone_number" => "94301008"],
+    ["name" => "antonio" , "phone_number" => "78542196"],
+    ["name" => "josue" , "phone_number" => "65983214"]
+  ]
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/contacts-app/">Home</a>
+                        <a class="nav-link" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./add.html">Add Contact</a>
@@ -44,44 +54,27 @@
     <main>
         <div class="container pt-4 pt3">
             <div class="row">
-                <!--Name3-->
-                <div class="col-md-4 mb-3">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <h3 class="card-title text-capitalize">Contact Name 1</h3>
-                            <p class="m-2">987654321</p>
-                            <a href="#" class="btn btn-secondary mb-2">Edit Contact</a>
-                            <a href="#" class="btn btn-danger mb-2">Delete Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <!--Name2-->
-                <div class="col-md-4 mb-3">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <h3 class="card-title text-capitalize">Contact Name 2</h3>
-                            <p class="m-2">987654321</p>
-                            <a href="#" class="btn btn-secondary mb-2">Edit Contact</a>
-                            <a href="#" class="btn btn-danger mb-2">Delete Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <!--Name3-->
-                <div class="col-md-4 mb-3">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <h3 class="card-title text-capitalize">Contact Name 3</h3>
-                            <p class="m-2">987654321</p>
-                            <a href="#" class="btn btn-secondary mb-2">Edit Contact</a>
-                            <a href="#" class="btn btn-danger mb-2">Delete Contact</a>
-                        </div>
 
+                <!--vucle de user-->
+                <?php foreach ($contacts as $constant):?>
+                    <div class="col-md-4 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h3 class="card-title text-capitalize"><?= $constant ["name"]?></h3>
+                                <p class="m-2"><?= $constant ["phone_number"] ?></p>
+                                <a href="#" class="btn btn-secondary mb-2">Edit Contact</a>
+                                <a href="#" class="btn btn-danger mb-2">Delete Contact</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach ?>    
+
             </div>
         </div>
     </main>
 
 </body>
+
+
 
 </html>
