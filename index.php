@@ -1,10 +1,9 @@
 <?php
 
-if(file_exists("contact.json")){
-    $contacts = json_decode(file_get_contents("contact.json"),true);
-}else{
-    $contacts = [];
-}
+$db = require  "../phpmysql/database.php";
+
+$contacts = $conn->query("SELECT * FROM contacts");
+
 
 ?>
 
@@ -56,14 +55,14 @@ if(file_exists("contact.json")){
         <div class="container pt-4 pt3">
             <div class="row">
 
-                <!--vucle de user-->
-                <?php if(count($constants) == 0 ):?>
-                    <div class="col-md-4 mx-auto">
-                        <div class="card card-body text-center">
-                            <p>No contacts saved yet</p>
-                            <a href="add.php">Add One!</a>
-                        </div>
+                <!--si no hay un fichero llamado contact.json quealo-->
+                <?php if ($contacts->rowCount() == 0): ?>
+                <div class="col-md-4 mx-auto">
+                    <div class="card card-body text-center">
+                        <p>No contacts saved yet</p>
+                        <a href="add.php">Add One!</a>
                     </div>
+                </div>
                 <?php endif ?>
 
                 <?php foreach ($contacts as $constant):?>
@@ -71,7 +70,7 @@ if(file_exists("contact.json")){
                         <div class="card text-center">
                             <div class="card-body">
                                 <h3 class="card-title text-capitalize"><?= $constant ["name"]?></h3>
-                                <p class="m-2"><?= $constant ["phone_number"] ?></p>
+                                <p class="m-2"><?= $constant ["phone_nober"]?></p>
                                 <a href="#" class="btn btn-secondary mb-2">Edit Contact</a>
                                 <a href="#" class="btn btn-danger mb-2">Delete Contact</a>
                             </div>
