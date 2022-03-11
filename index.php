@@ -72,7 +72,7 @@ $contacts = $conn->query("SELECT * FROM contacts");
                                 <h3 class="card-title text-capitalize"><?= $constant ["name"]?></h3>
                                 <p class="m-2"><?= $constant ["phone_nober"]?></p>
                                 <a href="#" class="btn btn-secondary mb-2">Edit Contact</a>
-                                <a href="#" class="btn btn-danger mb-2">Delete Contact</a>
+                                <a href="./delete.php?id=<?= $constant["id"]?>" class="btn btn-danger mb-2">Delete Contact</a>
                             </div>
                         </div>
                     </div>
