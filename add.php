@@ -1,29 +1,29 @@
 <?php 
 
-require  "./database.php";
+    require  "./database.php";
 
-$error = null ;
+    $error = null ;
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(empty($_POST["name"]) || empty($_POST["phone_number"])){
-        $error = "Please fill all the fields.";
-    }else 
-        if(strlen($_POST["phone_number"] ) < 8){
-        $error = "Pone number must be at least 8 characters.";
-        }else{
-            $name = $_POST["name"];
-            $phoneNumber = $_POST["phone_number"];
-    
-            $statement = $conn->prepare("INSERT INTO contacts (name ,phone_nober) VALUES(:name, :phone_number)");
-            $statement->bindParam(":name", $_POST["name"]);
-            $statement->bindParam(":phone_number", $_POST["phone_number"]);
-            $statement->execute();
-    
-           header("location:index.php");
-           
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(empty($_POST["name"]) || empty($_POST["phone_number"])){
+            $error = "Please fill all the fields.";
+        }else 
+            if(strlen($_POST["phone_number"] ) < 8){
+            $error = "Pone number must be at least 8 characters.";
+            }else{
+                $name = $_POST["name"];
+                $phoneNumber = $_POST["phone_number"];
+        
+                $statement = $conn->prepare("INSERT INTO contacts (name ,phone_nober) VALUES(:name, :phone_number)");
+                $statement->bindParam(":name", $_POST["name"]);
+                $statement->bindParam(":phone_number", $_POST["phone_number"]);
+                $statement->execute();
+        
+            header("location:index.php");
+            
+        };
+        
     };
-    
-};
 ?>
 
 
