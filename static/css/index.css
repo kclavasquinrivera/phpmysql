@@ -1,4 +1,10 @@
-.navbar img{
+.navbar img {
     width: 1.2rem;
     margin-right: 5px;
+}
+
+.welcome {
+    background: url('../img/background.jpg');
+    background-position: center center;
+    background-size: cover;
 }
