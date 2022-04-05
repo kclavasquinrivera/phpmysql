@@ -14,7 +14,7 @@
     <!--Static Content-->
     <link rel="stylesheet" href="./static/css/index.css">
     <?php $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH)?>
-    <?php if($uri == "" || $uri == "/index.php") :?>
+    <?php if($uri  || $uri == "/index.php") :?>
         <script defer src="/static/js/welcome.js"></script>
     <?php endif?>
 
