@@ -12,10 +12,9 @@ CREATE TABLE users(
 CREATE TABLE contacts(
     id INT AUTO_INCREMENT PRIMARY KEY ,
     name VARCHAR(255),
-    phone_nober VARCHAR(255)
+    user_id INT NOT NULL,
+    phone_nober VARCHAR(255),
+
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-INSERT INTO users (name , email , password) VALUE ("pepe" , "kclavasquinwk@gmail.com" , "wwkc0205");
-
-
-INSERT INTO contacts (name , phone_nober) VALUE ("pepe" , "12457896");
