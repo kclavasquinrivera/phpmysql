@@ -28,5 +28,8 @@
 
     $conn->prepare("DELETE FROM contacts WHERE id = :id")->execute([":id" => $id]);
 
+    $_SESSION["flash"] = ["message" => "Contact {$contact['name']} updated."];
+
     header("Location: home.php");
+    return;
 ?>

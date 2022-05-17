@@ -21,11 +21,11 @@
 
     $contact = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if($contact["user_id"] !== $_SESSION["user"]["id"]){
-        http_response_code(404);
-        echo("HTTP 403 UNAUTHORIZED");
-        return;
-    };
+    if ($contact["user_id"] !== $_SESSION["user"]["id"]) {
+      http_response_code(403);
+      echo("HTTP 403 UNAUTHORIZED");
+      return;
+    }
 
     $error = null ;
 
@@ -48,8 +48,11 @@
                     ":name" =>$_POST["name"],
                     ":phone_number" =>$_POST["phone_number"], 
                 ]);
+
+                $_SESSION["flash"] = ["message" => "Contact {$_POST['name']} updated."];
         
             header("location:home.php");
+            return;
             
         };
         
@@ -69,12 +72,12 @@
                                 <?= $error ?>
                             </p>
                         <?php endif ?>   
-                        <form method="POST" action="edite.php?id=<?=$constant["id"]?>">
+                        <form method="POST" action="edite.php?id=<?=$contact["id"]?>">
                             <div class="mb-3 row">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Name</label>
 
                                 <div class="col-md-6">
-                                    <input value="<?= $constant["name"]?>" id="name" type="text" class="form-control" name="name" required autocomplete="name" autofocus>
+                                    <input value="<?= $contact['name'] ?>" id="name" type="text" class="form-control" name="name" autocomplete="name" autofocus>
                                 </div>
                             </div>
 
@@ -82,7 +85,7 @@
                                 <label for="phone_number" class="col-md-4 col-form-label text-md-end">Phone Number</label>
 
                                 <div class="col-md-6">
-                                    <input value="<?=$constant["phone_nober"]?>" id="phone_number" type="tel" class="form-control" name="phone_number" required autocomplete="phone_number" autofocus>
+                                    <input value="<?=$contact["phone_nober"]?>" id="phone_number" type="tel" class="form-control" name="phone_number" autocomplete="phone_number" autofocus>
                                 </div>
                             </div>
 
