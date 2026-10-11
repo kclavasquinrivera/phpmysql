@@ -2,11 +2,8 @@
 
 A full-stack web application built with PHP, MySQL, and Bootstrap that lets users securely store and manage their personal contacts. Each user has a private contact list protected by authentication and access control.
 
-![Geometric Pattern Animation](Screenshot%202026-10-10%20162205.png)
-![Geometric Pattern Animation](Screenshot%202026-10-10%20162205.png)
-![Geometric Pattern Animation](Screenshot%202026-10-10%20162205.png)
-![Geometric Pattern Animation](Screenshot%202026-10-10%20162205.png)
-
+![Login](docs/screenshots/login.png) ![Contact list](docs/screenshots/contacts.png)
+![Register](docs/screenshots/register.png) ![Add contact](docs/screenshots/add-contact.png)
 
 ## Overview
 
