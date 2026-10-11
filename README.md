@@ -134,8 +134,3 @@ Through this project, I practiced:
 I built this project to learn how server-side web applications work: handling forms, authenticating users, and storing data in a relational database. I published it on GitHub to document my progress and continue developing my software engineering skills.
 
 **Note:** This application is an educational project and is not intended for production use. Database credentials are configured for local development only.
-
-## Author
-
-**Kevin Clavasquin**
-GitHub: [@kclavasquinrivera](https://github.com/kclavasquinrivera)
